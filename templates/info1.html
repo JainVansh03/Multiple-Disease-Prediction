@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  <style>
+    html, body{ height:100%; margin:0; }
+header{ height:50px;}
+footer{ height:75px; background:black; }
+
+/* Trick */
+body{ 
+  display:flex; 
+  flex-direction:column; 
+  font-family: Cambria;
+    height: 100%;
+    background-image:  linear-gradient(346deg, rgba(0,0,0,0.8016456582633054) 54%, rgba(10,180,12,0.6195728291316527) 78%);
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+footer{
+  padding:10px;
+  margin-top:auto;
+  margin-bottom: auto; 
+}
+  </style>
+
+</head>
+<body>
+    <div class="row"  style="margin-bottom: 477px;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+		<br>
+		<br>
+		<br>
+		<br>
+            
+                <div class="jumbotron " style="background:rgb(0,255,120); ">
+  <center><h1 class="display-4" style="color: black; font-size:50px;">Great! You are Healthy</h1></center>
+  <p class="lead" style="color: black; font-size:30px;">You are Absolutely Alright ! There is no Marks for Diabetes. Enjoy you life with full of Happiness.</p>
+  <hr class="my-4">
+  <p style="color: black; font-size:30px;">Be careful at your health. Nothing is important than your health.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{{ url_for('information1') }}"  role="button" style="color: black; ">Learn more</a>
+  </p>
+</div>
+            
+           
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><a href="{{ url_for('home') }}" class="btn btn-block btn-primary" style="color: black; ">Back to Home</a></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+	</body>

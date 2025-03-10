@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Disease Prediction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .navbar {
+  min-height: 80px;
+  color: linear-gradient(#4e0374, #c37ee6);
+  
+}
+body{
+  font-family: Cambria;
+    height: 100%;
+    background-image: linear-gradient(349deg, rgba(0,10,36,1) 0%, rgba(77,77,58,0) 84%, rgba(0,250,255,1) 100%);
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	}
+	
+h1 {
+
+  text-align: center;
+color:white;
+text-transform:uppercase;
+}
+h2{
+text-transform:uppercase;
+}
+p{
+  text-align: justify;
+  }
+
+</style>
+</head>
+<body>
+ <nav class="navbar "  >
+  <div class="container-fluid">
+    <div class="navbar-header">
+	  <img src="static/logo.png" width="70" height="70" class="d-inline-block align-top" alt="">
+        <a class="navbar-brand" href="{{ url_for('home')}}" style="color:black; font-size:30px;padding-top: 30px;">Disease Prediction</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active"><a href="{{ url_for('home')}}" style="color:black; font-size:20px; padding-top: 30px; font-weight:bolder;">Home</a></li>
+      <li><a href="{{ url_for('predict')}}" style="color:black; font-size:20px;padding-top: 30px; font-weight:bolder;">Diabetes</a></li>
+      <li><a href="{{ url_for('predict1')}}" style="color:black; font-size:20px;padding-top: 30px; font-weight:bolder;">Heart Attack</a></li>
+      <li><a href="{{ url_for('predict2')}}" style="color:black; font-size:20px;padding-top: 30px; font-weight:bolder;">Kidney</a></li>
+	  
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="card card-body" style="border: 1px solid black; box-shadow: 0 0 15px black; background: linear-gradient(48deg, rgba(0,10,36,1) 0%, rgba(77,77,58,0) 84%, rgba(246,255,0,1) 100%);width:1100px;">
+        <h1>Smart Disease Predictor</h1>
+        <br>
+        <h2 style="color:yellow;">Model Accuracies:</h2>
+        <ul>
+            <li style="color:yellow;">Diabetes Model: <strong>99.33%</strong></li>
+         
+            <li style="color:yellow;">Heart Attack Model: <strong>83.51%</strong></li>
+            <li style="color:yellow;">Kidney Disease Model: <strong>99.5%</strong></li>
+           
+        </ul>
+        
+       <h1>Information about the Diseases</h1>
+        
+        <div class="row">
+		 
+            <div class="col-md-11 card card-body" style="box-shadow: 0 0 5px black; margin: 5px; background-color:silver ;width:1120px; font-weight:bolder; ">
+                 <img align="Right" src="/static/Capture.png"  style="  max-width: 50%;height: auto; padding: 20px;"alt="">
+				<h2>Diabetes</h2>
+				
+                <p>Diabetes mellitus refers to a group of diseases that affect how your body uses blood sugar (glucose). Glucose is vital to your health because it's an important source of energy for the cells that make up your muscles and tissues. It's also your brain's main source of fuel. The underlying cause of diabetes varies by type. But, no matter what type of diabetes you have, it can lead to excess sugar in your blood. Too much sugar in your blood can lead to serious health problems.</p>
+                <h5 style="font-weight:bold;">Symptoms</h5>
+				
+                <ul>
+                    <li>Increased thirst</li>
+                    <li>Frequent urination</li>
+                    <li>Extreme hunger</li>
+                    <li>Unexplained weight loss</li>
+                    <li>Blurred vision</li>
+                </ul>
+				
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;  background-color:silver ;width:1120px; font-weight:bolder; ">
+                
+				<img align="left" src="/static/Capture1.png"  style="  max-width: 50%;height: auto; padding: 20px;"alt="">
+				<h2 >Heart Attack/ Cardiovascular Disease</h2>
+                <p>Cardiovascular disease (heart Attack) refers to a group of diseases that affect the heart and blood vessels of your body. These diseases can affect one or many parts of your heart and /or blood vessels. A person may be symptomatic (physically experience the disease) or be asymptomatic (not feel anything at all).Type of chest pain. (1 = typical angina, 2 = atypical angina, 3 = non — anginal pain, 4 = asymptotic).</p>
+                <h5 style="font-weight:bold;">Symptoms</h5>
+                <ul>
+                    <li>Pounding or racing heart (palpitations)</li>
+                    <li>Chest pain</li>
+                    <li>Sweating</li>
+                    <li>Lightheadedness</li>
+                    <li>Shortness of breath</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        
+
+        
+       
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;  background-color:silver ;width:1120px; font-weight:bolder; ">
+			<img align="Right" src="/static/Capture2.png"  style="  max-width: 50%;height: auto; padding: 20px;"alt="">
+                <h2>Kidney Disease</h2>
+                <p>Chronic kidney disease (CKD) means your kidneys are damaged and can’t filter blood the way they should. The disease is called “chronic” because the damage to your kidneys happens slowly over a long period of time. This damage can cause wastes to build up in your body. CKD can also cause other health problems.</p>
+                <h5 style="font-weight:bold;">Symptoms</h5>
+                <ul>
+                    <li>Changes in urination</li>
+                    <li>Difficulty breathing</li>
+                    <li>Feeling tired and having less energy</li>
+                  
+                    <li>Nausea or upset stomach</li>
+                </ul>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+</body>
+</html>

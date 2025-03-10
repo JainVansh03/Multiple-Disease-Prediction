@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Diabetes Prediction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .navbar {
+  min-height: 80px;
+  color: linear-gradient(#4e0374, #c37ee6);
+  
+}
+body{
+  font-family: Cambria;
+    height: 100%;
+    background-image: linear-gradient(349deg, rgba(0,10,36,1) 0%, rgba(77,77,58,0) 84%, rgba(0,250,255,1) 100%);
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	}
+	
+h1 {
+
+  text-align: center;
+color:white;
+text-transform:uppercase;
+}
+h2{
+text-transform:uppercase;
+}
+p{
+  text-align: justify;
+  }
+
+</style>
+</head>
+<body>
+ <nav class="navbar "  >
+  <div class="container-fluid">
+    <div class="navbar-header">
+	  <img src="static/logo.png" width="70" height="70" class="d-inline-block align-top" alt="">
+        <a class="navbar-brand" href="{{ url_for('home')}}" style="color:black; font-size:30px;padding-top: 30px;">Disease Prediction</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active"><a href="{{ url_for('home')}}" style="color:black; font-size:20px; padding-top: 30px; font-weight:bolder;">Home</a></li>
+      <li><a href="{{ url_for('predict')}}" style="color:black; font-size:20px;padding-top: 30px; font-weight:bolder;">Diabetes</a></li>
+      <li><a href="{{ url_for('predict1')}}"style="color:black; font-size:20px;padding-top: 30px; font-weight:bolder;">Heart Attack</a></li>
+      <li><a href="{{ url_for('predict2')}}" style="color:black; font-size:20px;padding-top: 30px; font-weight:bolder;">Kidney</a></li>
+	  
+    </ul>
+  </div>
+</nav>
+<div class="row" >
+    <div class="col-md-4" ></div>
+	
+    <div class="col-md-6" >
+       <h1 style="color:Black; font-weight:bolder; padding-right:25%;">Diabetes Predictor</h1>
+        <div class="card card-body" style="border: 1px solid black;    background: linear-gradient(266deg, rgba(0,10,36,1) 0%, rgba(103,103,103,0.583158263305322) 67%, rgba(223,223,223,0) 100%); width:75%; ">
+            <form class="form-horizontal"  action="{{ url_for('diabetes')}}" method="post">
+                <div class="form-group" >
+                    <input style="border: 3px solid black; background-color: white; font-weight:bolder;color:black;  " class="form-control" type="text" name="Pregnancies" placeholder="No. of Pregnancies(Number of times pregnant){eg. 2,0}" required="required">
+                </div>
+				<br>
+                <div class="form-group">
+                    <input style="border: 3px solid black; background-color: white; font-weight:bolder; color:black;" class="form-control" type="text" name="Glucose" placeholder="Glucose( Plasma glucose concentration ){eg. 138,84}" required="required">
+                </div>
+				<br>
+                <div class="form-group">
+                    <input style="border: 3px solid black; background-color: white;font-weight:bolder;color:black; " class="form-control" type="text" name="BloodPressure" placeholder="Blood Pressure (Diastolic blood pressure (mm Hg)){eg. 62,82}" required="required">
+                </div>
+				<br>
+                <div class="form-group">
+                    <input style="border: 3px solid black; background-color:white;font-weight:bolder; color:black;" class="form-control" type="text" name="SkinThickness" placeholder="Skin Thickness (Triceps skin fold thickness (mm)) {eg. 35,31}" required="required">
+                </div>
+				<br>
+                <div class="form-group">
+                    <input style="border: 3px solid black; background-color: white;font-weight:bolder; color:black;" class="form-control" type="text" name="Insulin" placeholder="Insulin (2-Hour serum insulin (mu U/ml)) {eg. 167,125}" required="required">
+                </div>
+				<br>
+                <div class="form-group">
+                    <input style="border: 3px solid black; background-color: white;font-weight:bolder;color:black; " class="form-control" type="text" name="BMI" placeholder="BMI(Body mass index (weight in kg/(height in m)^2)){eg. 33.6,38.2}" required="required">
+                </div>
+				<br>
+                <div class="form-group">
+                    <input style="border: 3px solid black; background-color: white;font-weight:bolder;color:black; " class="form-control" type="text" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function {eg. 0.127,0.233}" required="required">
+                </div>
+				<br>
+                <div class="form-group">
+                    <input style="border: 3px solid black; background-color: white;font-weight:bolder;color:black; " class="form-control" type="text" name="Age" placeholder="Age (in years) {eg. 47,23}" required="required">
+                </div>
+				
+
+                <button type="submit" style=" background-color:silver; text-align: center;color:black; border: 3px solid black; width:100%; box-shadow: 0 0 15px black; font-weight:bolder; " >PREDICT</button>
+            </form>
+			{{ prediction_text }}
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+</body>
+</html>
